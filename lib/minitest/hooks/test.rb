@@ -85,9 +85,9 @@ module Minitest::Hooks::ClassMethods
     instance
   end
 
-  # :nocov:
+  # simplecov:disable
   if Minitest::VERSION >= '6'
-  # :nocov:
+  # simplecov:enable
     def run_suite(reporter, options = {})
       @_minitest_hooks_reporter = reporter
       super
@@ -177,10 +177,10 @@ module Minitest::Hooks::ClassMethods
     # to the reporter.
     if(defined?(Minitest::Result))
       result = Minitest::Result.from(instance)
-    # :nocov:
+    # simplecov:disable
     else
       result = instance
-    # :nocov:
+    # simplecov:enable
     end
     reporter.record result
   end
